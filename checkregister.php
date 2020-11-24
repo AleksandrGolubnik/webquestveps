@@ -21,10 +21,8 @@ $pass = md5($pass."fsdfds");
     $password = $url["3225ad60"];
     $db = substr($url["mysql://bdf7379cdd2da2:3225ad60@eu-cdbr-west-03.cleardb.net/heroku_65b88f02bf3374f?reconnect=true"],1);
 
-    mysqli_connect($server, $username, $password);
+    $mysql=new mysqli($server, $username, $password, $db);
 
-
-    mysqli_select_db($db);
 $mysql -> query("INSERT INTO `users` (`login`, `pass`, `team`) VALUES('$login', '$pass', '$team')");
 $mysql->close();
 
