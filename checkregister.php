@@ -19,7 +19,7 @@ $pass = md5($pass."fsdfds");
     $server = $url["eu-cdbr-west-03.cleardb.net"];
     $username = $url["bdf7379cdd2da2"];
     $password = $url["3225ad60"];
-    $db = substr($url["mysql://bdf7379cdd2da2:3225ad60@eu-cdbr-west-03.cleardb.net/heroku_65b88f02bf3374f?reconnect=true"],1);
+    $db = substr($url["heroku_65b88f02bf3374f"],1);
 
     $mysql=new mysqli($server, $username, $password, $db);
 
