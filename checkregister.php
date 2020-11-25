@@ -14,14 +14,14 @@ if(mb_strlen($login) < 5 || mb_strlen($login) > 90) {
   exit();
 }
 $pass = md5($pass."fsdfds");
-    $url=parse_url(getenv("mysql://bdf7379cdd2da2:3225ad60@eu-cdbr-west-03.cleardb.net/heroku_65b88f02bf3374f?reconnect=true"));
+$url=parse_url(getenv("mysql://bdf7379cdd2da2:3225ad60@eu-cdbr-west-03.cleardb.net/heroku_65b88f02bf3374f?reconnect=true"));
 
-    $server = $url["eu-cdbr-west-03.cleardb.net"];
-    $username = $url["bdf7379cdd2da2"];
-    $password = $url["3225ad60"];
-    $db = substr($url["heroku_65b88f02bf3374f"],1);
+$server = $url["eu-cdbr-west-03.cleardb.net"];
+$username = $url["bdf7379cdd2da2"];
+$password = $url["3225ad60"];
+$db = substr($url["heroku_65b88f02bf3374f"],1);
 
-    $mysql=new mysqli($server, $username, $password, $db);
+$mysql=new mysqli($server, $username, $password, $db);
 
 $mysql -> query("INSERT INTO `users` (`login`, `pass`, `team`) VALUES('$login', '$pass', '$team')");
 $mysql->close();
