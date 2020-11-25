@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 $login = filter_var(trim($_POST['login']), FILTER_SANITIZE_STRING);
 $pass = filter_var(trim($_POST['pass']), FILTER_SANITIZE_STRING);
+$pass = md5($pass."fsdfds");
 $url=parse_url(getenv("mysql://bdf7379cdd2da2:3225ad60@eu-cdbr-west-03.cleardb.net/heroku_65b88f02bf3374f?reconnect=true"));
 
     $server = $url['eu-cdbr-west-03.cleardb.net'];
@@ -13,7 +14,7 @@ $url=parse_url(getenv("mysql://bdf7379cdd2da2:3225ad60@eu-cdbr-west-03.cleardb.n
    $mysql= new mysqli($server, $username, $password, $db);
 
 
-$pass = md5($pass."fsdfds");
+
 $result = $mysql -> query("SELECT * FROM `users` WHERE `login` = '$login' AND  `pass` = '$pass'");
 $user = $result->fetch_assoc();
 if(count($user) == 0) {
