@@ -17,7 +17,7 @@
 <?php require "blocks/header.php"?>
 <div class="container mt-4">
   <h1>Форма регистрации команды</h1><br>
-  <form action="checkregister.php" method="post">
+  <form action="/checkregister.php" method="post">
     <input type="text" class="form-control" name="login" id="login" placeholder="Введите логин"><br>
     <input type="password" class="form-control" name="pass" id="pass" placeholder="Введите пароль"><br>
     <input type="text" class="form-control" name="team" id="team" placeholder="Введите название команды"><br>
